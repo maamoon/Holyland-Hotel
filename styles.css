@@ -175,6 +175,14 @@ body {
   margin-top: 0;
 }
 
+.links__group--first .links__title {
+  margin-top: 0;
+}
+
+.links__group--first + .links__row {
+  margin-top: 0.6rem;
+}
+
 .links__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -191,14 +199,12 @@ body {
   margin-top: 0;
 }
 
-.links__row + .links__group .links__title {
-  margin-top: 0.6rem;
-}
 
 .links__group--review {
   flex-shrink: 0;
 }
 
+.link-buttons,
 .review-buttons {
   display: flex;
   flex-direction: column;
@@ -247,30 +253,46 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  html, body {
+    overflow: auto;
+    min-height: 100%;
+    height: auto;
+  }
+
+  .page {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+  }
+
   .main {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
+    min-height: 0;
+  }
+
+  .map-section {
+    flex-shrink: 0;
   }
 
   .map-wrapper {
     min-height: 180px;
+    max-height: 35vh;
   }
 
   .links {
-    overflow-y: auto;
+    overflow: visible;
+    flex-shrink: 0;
+    padding-bottom: 1.5rem;
   }
 
-  .links__row {
-    grid-template-columns: 1fr;
-  }
-
-  .review-buttons {
+  .link-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.4rem;
   }
 
-  .review-buttons .link-btn {
+  .link-buttons .link-btn {
     padding: 0.6rem 0.5rem;
     font-size: 0.75rem;
     flex-direction: column;
@@ -278,23 +300,29 @@ body {
     text-align: center;
   }
 
-  .review-buttons .link-btn__text {
+  .link-buttons .link-btn__text {
     text-align: center;
+  }
+
+  .links__row {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 28vh;
-    min-height: 120px;
+    height: 26vh;
+    min-height: 110px;
   }
 
   .main {
     padding: 0.75rem;
+    padding-bottom: 2rem;
   }
 
   .map-wrapper {
-    min-height: 160px;
+    min-height: 140px;
+    max-height: 25vh;
   }
 
   .link-btn {
@@ -302,16 +330,12 @@ body {
     font-size: 0.85rem;
   }
 
-  .links__row {
-    grid-template-columns: 1fr;
-  }
-
-  .review-buttons {
+  .link-buttons {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.35rem;
   }
 
-  .review-buttons .link-btn {
+  .link-buttons .link-btn {
     padding: 0.5rem 0.35rem;
     font-size: 0.7rem;
     flex-direction: column;
