@@ -1,0 +1,248 @@
+/* Holyland Hotel — Social & Contact Focus */
+:root {
+  --color-bg: #1a1612;
+  --color-surface: #252019;
+  --color-card: #2d2620;
+  --color-accent: #d4a853;
+  --color-accent-hover: #e4b963;
+  --color-text: #f5f0e8;
+  --color-text-muted: #a89f92;
+  --color-whatsapp: #25d366;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Hero */
+.hero {
+  flex-shrink: 0;
+  position: relative;
+  height: 32vh;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-surface);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 22, 18, 0.95) 0%, rgba(26, 22, 18, 0.4) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.hero__location {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.6rem;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-accent);
+  color: #1a1612;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.hero__btn:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.02);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Images */
+.images {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.images__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  height: 100%;
+  min-height: 200px;
+}
+
+.images__item {
+  background-color: var(--color-surface);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-sm);
+}
+
+.images__item--large {
+  grid-row: span 2;
+}
+
+/* Links Section */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.links__title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.links__title:first-child {
+  margin-top: 0;
+}
+
+/* Link Buttons */
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-card);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.link-btn:hover {
+  background: rgba(212, 168, 83, 0.15);
+  border-color: rgba(212, 168, 83, 0.4);
+  transform: translateX(4px);
+}
+
+.link-btn__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.link-btn__text {
+  flex: 1;
+  text-align: left;
+}
+
+.link-btn--whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+}
+
+.link-btn--whatsapp .link-btn__icon {
+  color: var(--color-whatsapp);
+}
+
+.link-btn--map {
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .images__grid {
+    min-height: 180px;
+    max-height: 35vh;
+  }
+
+  .images__item--large {
+    grid-row: span 1;
+  }
+
+  .links {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 28vh;
+    min-height: 120px;
+  }
+
+  .main {
+    padding: 0.75rem;
+  }
+
+  .images__grid {
+    grid-template-columns: 1fr 1fr;
+    min-height: 140px;
+  }
+
+  .link-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
