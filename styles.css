@@ -236,6 +236,20 @@ body {
 .link-btn__icon {
   font-size: 1.25rem;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-btn__icon i {
+  font-size: inherit;
+}
+
+.link-btn__img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  display: block;
 }
 
 .link-btn__text {
@@ -243,12 +257,16 @@ body {
   text-align: left;
 }
 
-.link-btn--whatsapp:hover {
-  border-color: rgba(37, 211, 102, 0.5);
+.link-btn--phone .link-btn__icon i {
+  color: #34a853;
 }
 
-.link-btn--whatsapp .link-btn__icon {
-  color: var(--color-whatsapp);
+.link-btn--email .link-btn__icon i {
+  color: #ea4335;
+}
+
+.link-btn--whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.5);
 }
 
 /* Responsive */
