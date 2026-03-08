@@ -137,6 +137,38 @@ body {
   grid-row: span 2;
 }
 
+.images__item--map {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  padding: 0.35rem;
+}
+
+.images__item--map .map-embed--gallery {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: none;
+  border-radius: 6px;
+}
+
+.images__item--map .map-link--gallery {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.65rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  background: rgba(26, 22, 18, 0.8);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.images__item--map .map-link--gallery:hover {
+  background: rgba(212, 168, 83, 0.3);
+}
+
 /* Links Section */
 .links {
   display: flex;
@@ -159,6 +191,26 @@ body {
 
 .links__title:first-child {
   margin-top: 0;
+}
+
+.links__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.links__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.links__group .links__title {
+  margin-top: 0;
+}
+
+.links__row + .links__group .links__title {
+  margin-top: 0.6rem;
 }
 
 /* Link Buttons */
@@ -201,8 +253,16 @@ body {
   color: var(--color-whatsapp);
 }
 
-.link-btn--map {
-  margin-top: 0.5rem;
+/* Map in gallery */
+.map-embed {
+  border: none;
+  background: var(--color-surface);
+}
+
+.map-embed--gallery {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
 }
 
 /* Responsive */
@@ -224,6 +284,10 @@ body {
   .links {
     overflow-y: auto;
   }
+
+  .links__row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -244,5 +308,9 @@ body {
   .link-btn {
     padding: 0.75rem 1rem;
     font-size: 0.85rem;
+  }
+
+  .links__row {
+    grid-template-columns: 1fr;
   }
 }
