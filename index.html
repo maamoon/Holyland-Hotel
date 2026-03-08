@@ -25,22 +25,17 @@
 
     <!-- Main: Images + Links -->
     <div class="main">
-      <!-- Images -->
-      <section class="images">
-        <div class="images__grid">
-          <div class="images__item images__item--large images__item--map">
-            <iframe
-              class="map-embed map-embed--gallery"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=35.864%2C32.012%2C35.871%2C32.018&layer=mapnik&marker=32.01463%2C35.86748"
-              title="Holyland Hotel location"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <a href="https://maps.app.goo.gl/8z69zGr4ea31jgvJ7" class="map-link map-link--gallery" target="_blank" rel="noopener">Open in Google Maps</a>
-          </div>
-          <div class="images__item" style="background-image: url('images/gallery-2.jpg'), url('https://rate.picscache.com/images/35685/upload/600X600/aff3be909d3ae95ef6f8d5c3eafe0df8.jpg');"></div>
-          <div class="images__item" style="background-image: url('images/gallery-3.jpg'), url('https://rate.picscache.com/images/35685/upload/500X256/e943c66da82cbfec9a00b3fd1f9a61b7.jpg');"></div>
-          <div class="images__item" style="background-image: url('images/hero.jpg'), url('https://rate.picscache.com/images/35685/upload/500X256/b72d26ae7ae501fd1dfde55407eaa263.jpg');"></div>
+      <!-- Map -->
+      <section class="map-section">
+        <div class="map-wrapper">
+          <iframe
+            class="map-embed"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=35.864%2C32.012%2C35.871%2C32.018&layer=mapnik&marker=32.01463%2C35.86748"
+            title="Holyland Hotel location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a href="https://maps.app.goo.gl/8z69zGr4ea31jgvJ7" class="map-link" target="_blank" rel="noopener">Open in Google Maps</a>
         </div>
       </section>
 
@@ -79,8 +74,9 @@
           </div>
         </div>
 
-        <div class="links__group">
+        <div class="links__group links__group--review">
           <h2 class="links__title">Review Us</h2>
+          <div class="review-buttons">
           <a href="https://g.page/r/CQReP7OoNzCeEAE/review" class="link-btn link-btn--review" target="_blank" rel="noopener">
             <span class="link-btn__icon">⭐</span>
             <span class="link-btn__text">Google</span>
@@ -93,6 +89,7 @@
             <span class="link-btn__icon">👍</span>
             <span class="link-btn__text">Facebook</span>
           </a>
+          </div>
         </div>
 
       </section>
